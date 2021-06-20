@@ -1,0 +1,60 @@
+*{
+	margin: 0;
+	padding: 0;
+	background-image: url('login.jpg');
+	font-family: sans-serif;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
+}
+form{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50px);
+	background: rgba(0, 0, 0, .4);
+	padding: 50px;
+	border-radius: 7px;
+	margin-top: -170px;
+	
+	
+}
+
+form label{
+	display: block;
+	color:#fff;
+	font-size: 20px;
+	margin-bottom: 6px;
+	cursor: pointer;
+	text-transform: capitalize;
+}
+form input{
+	font-size: 18px;
+	padding: 7px;
+	width: 100%;
+	border: 1px solid green;
+	color: white;
+	display: block;
+	background: transparent;
+}
+
+form input[type="submit"]{
+	width: 120px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+form p{
+	color: white;
+	font-size: 17px;
+}
+
+form p a{
+	color: yellow;
+	font-size: 20px;
+	text-decoration: none;
+	text-transform: capitalize;
+	cursor: pointer;
+}
