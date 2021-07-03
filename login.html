@@ -8,19 +8,120 @@
 </head>
 <body>
     
-        <form action="#">
+        <form action="#" onsubmit="return validate()">
             <label for="user">Username</label>
-            <input type="text" class="user"  required>
+            <input type="text" class="user" id="Username">
+            <br>
+            <label id="user" style="color: red; visibility: hidden;">Invalid</label>
+            <br>
+
             <label for="email">Email</label>
-            <input type="email" class="email" >
-            <label for="pass">Password</label>
-            <input type="password" class="pass" required>
+            <input type="email" class="email" id="email">
+            <br>
+            
+            <label id="email" style="color: red; visibility: hidden;">Invalid</label>
+            <br>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password">
+
+            <div class=strength>
+                <span id = "poor"></span>
+                <span id = "medium"></span>
+                <span id = "strong"></span>
+
+            </div>
+            <br>
+            <label id="password" style="color: red; visibility: hidden;">Invalid</label>
+            <br>
+            
             <label for="phone">Phone</label>
-            <input type="text" class="phone" placeholder=><br>
+            <input type="text"  id="phone"><br>
+           
+            <label id="phone" style="color: red; visibility: hidden;">Invalid</label>
+            
             <input type="submit" value="Register">
             <a href="index.html"></a>
         </form>
+
+        <script type="text/javascript">
+
+    function validate(){
+    var Username = document.getElementById('Username').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var phone = document.getElementById('phone').value;
+
+    var usercheck = /^[A-Za-z0-9\.-]{3,20}$/;
+    var emailcheck = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;
+    var passcheck = /^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]){8,10}$/;   
+    var phone = /^[0-9\.-]{10}$/;
+
+
+        if(usercheck.test(Username)){
+            document.getElementById("user").innerHTML = "Valid";
+            document.getElementById("user").style.visibility = "visible";
+            document.getElementById("user").style.color = "green";
+            return true;
+        
+        }
+        else
+        {
+            document.getElementById("user").innerHTML = "InValid";
+            document.getElementById("user").style.visibility = "visible";
+            document.getElementById("user").style.color = "red";
+            return false;
+        }
+
+        if(emailcheck.test(email)){
+            document.getElementById("email").innerHTML = "Valid";
+            document.getElementById("email").style.visibility = "visible";
+            document.getElementById("email").style.color = "green";
+            return true;
+        
+        }
+        else
+        {
+            document.getElementById("email").innerHTML = "InValid";
+            document.getElementById("email").style.visibility = "visible";
+            document.getElementById("email").style.color = "red";
+            return false;
+        }
+
+        if(passcheck.test(password)){
+            document.getElementById("password").innerHTML = "Valid";
+            document.getElementById("password").style.visibility = "visible";
+            document.getElementById("password").style.color = "green";
+            return true;
+        
+        }
+        else
+        {
+            document.getElementById("password").innerHTML = "InValid";
+            document.getElementById("password").style.visibility = "visible";
+            document.getElementById("password").style.color = "red";
+            return false;
+        }
+
+        if(phonecheck.test(phone)){
+            document.getElementById("phone").innerHTML = "Valid";
+            document.getElementById("phone").style.visibility = "visible";
+            document.getElementById("phone").style.color = "green";
+            return true;
+        
+        }
+        else
+        {
+            document.getElementById("phone").innerHTML = "InValid";
+            document.getElementById("phone").style.visibility = "visible";
+            document.getElementById("phone").style.color = "red";
+            return false;
+        }
+
+    }
+        
+    </script>
     
     
 </body>
-</html>
+</html

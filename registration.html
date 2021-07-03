@@ -8,13 +8,50 @@
     <link rel="stylesheet" href="css/style1.css">
 </head>
 <body>
-    <form action="#">
+    <form action="login.html" onsubmit="return validate()">
         <label for="email">Email</label>
-        <input type="email" class="email" >
+        <input type="email" class="email" id="email">
+        <label id="e" style="color: red; visibility: hidden;">Invalid</label>
+        <br>
+        <br>
         <label for="pass">Password</label>
-        <input type="password" class="pass" required>
+        <input type="password" class="pass" id="password">
+        <label id="p" style="color: red; visibility: hidden;">Invalid</label>
+        <br>
         <input type="submit" value="Log In">
         <a href="index.html"></a>
+    </form>
+    <script type="text/javascript">
+
+function validate(){
+        var email = document.getElementById('email');
+        var password = document.getElementById('password');
+        
+        if(email.value.trim() == ""){
+            // alert("Email cannot be empty");
+            email.style.border = "2px solid red";
+            document.getElementById("e").style.visibility = "visible";
+            return false;
+        }
+        else if(password.value.trim() == "")
+        {
+            // alert("Password cannot be empty");
+            password.style.border = "2px solid red";
+            document.getElementById("p").style.visibility = "visible";
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
+    }
+
+
+    </script>
+
+
+
 
 </body>
 </html>
